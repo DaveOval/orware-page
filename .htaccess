@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /orware-page/
+  
+  # Si la petición es para un archivo existente o un directorio, no hacer nada
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  
+  # Redirigir todas las demás peticiones a index.html
+  RewriteRule . /orware-page/index.html [L]
+</IfModule>
