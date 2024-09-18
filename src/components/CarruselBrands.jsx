@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
+import { uicolors } from '../ui/color';
 
 const slide = keyframes`
     from {
@@ -12,10 +13,18 @@ const slide = keyframes`
 
 const CarruselBrandsContainer = styled.div`
     overflow: hidden;
-    padding: 50px 0;
+    padding: 25px 0;
     white-space: nowrap;
     position: relative;
     display: flex;
+    margin-top: 50px;
+    border-radius: 40px;
+    background-color: ${uicolors.transparencia};
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        background-color: ${uicolors.background};
+    }
+
     &:before {
         position: absolute;
         top: 0;
@@ -38,13 +47,10 @@ const CarruselBrandsContainer = styled.div`
 const Logos_slider = styled.div`
     display: flex;
     flex-direction: row;
-    animation: ${slide} 35s linear infinite;
+    animation: ${slide} 50s linear infinite;
     img {
         margin: auto 50px;
         width: 190px;
-    }
-    &:hover {
-        animation-play-state: paused;
     }
     
 `;
