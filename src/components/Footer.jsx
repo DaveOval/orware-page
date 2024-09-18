@@ -44,12 +44,25 @@ const FooterHeader = styled.div`
     @media (max-width: 768px) {
         flex-direction: column !important;
         height: auto;
+        ul {
+            flex-direction: column;
+        }
     }
 `
 const FooterBody = styled.div`
     display: flex;
     width: 100%;
     max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    p {
+        font-size: 20px;
+    }
+    @media (max-width: 768px) {
+        flex-direction: column !important;
+        height: auto;
+    }
 `
 const CustomLink = styled(Link)`
     text-decoration: none;
