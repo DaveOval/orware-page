@@ -71,14 +71,14 @@ export const Nav = () => {
       <ImageContainer>
         <Link to="/">
           <picture>
-            <img src="./logoorware.png" alt="Logo orware" />
+            <img src={`${import.meta.env.BASE_URL}/logoorware.png`} alt="Logo orware" />
           </picture>
         </Link>
       </ImageContainer>
 
       <Hamburger onClick={toggleMenu}>
         <picture>
-          <img src="./icons/burger.svg" alt="Logo orware" />
+          <img src={`${import.meta.env.BASE_URL}./icons/burger.svg`} alt="Logo orware" />
         </picture>
       </Hamburger>
 

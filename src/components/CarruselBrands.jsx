@@ -43,6 +43,9 @@ const Logos_slider = styled.div`
         margin: auto 50px;
         width: 190px;
     }
+    &:hover {
+        animation-play-state: paused;
+    }
     
 `;
 
@@ -50,22 +53,22 @@ export const CarruselBrands = () => {
   return (
     <CarruselBrandsContainer>
         <Logos_slider>
-            <img src="./brands/grandstream.png" alt="Logo grandstream" />
-            <img src="./brands/hinksemi.png" alt="Logo hinksemi" />
-            <img src="./brands/linkedpro.png" alt="Logo linkedpro" />
-            <img src="./brands/mikrotik.png" alt="Logo mikrotik" />
-            <img src="./brands/panduit.png" alt="Logo panduit" />
-            <img src="./brands/tp-link.png" alt="Logo tp-link" />
-            <img src="./brands/ubiquiti.png" alt="Logo ubiquiti" />
+            <img src={`${import.meta.env.BASE_URL}/brands/grandstream.png`} alt="Logo grandstream" />
+            <img src={`${import.meta.env.BASE_URL}/brands/hinksemi.png`} alt="Logo hinksemi" />
+            <img src={`${import.meta.env.BASE_URL}/brands/linkedpro.png`} alt="Logo linkedpro" />
+            <img src={`${import.meta.env.BASE_URL}/brands/mikrotik.png`} alt="Logo mikrotik" />
+            <img src={`${import.meta.env.BASE_URL}/brands/panduit.png`} alt="Logo panduit" />
+            <img src={`${import.meta.env.BASE_URL}/brands/tp-link.png`} alt="Logo tp-link" />
+            <img src={`${import.meta.env.BASE_URL}/brands/ubiquiti.png`} alt="Logo ubiquiti" />
         </Logos_slider>
         <Logos_slider>
-            <img src="./brands/grandstream.png" alt="Logo grandstream" />
-            <img src="./brands/hinksemi.png" alt="Logo hinksemi" />
-            <img src="./brands/linkedpro.png" alt="Logo linkedpro" />
-            <img src="./brands/mikrotik.png" alt="Logo mikrotik" />
-            <img src="./brands/panduit.png" alt="Logo panduit" />
-            <img src="./brands/tp-link.png" alt="Logo tp-link" />
-            <img src="./brands/ubiquiti.png" alt="Logo ubiquiti" />
+            <img src={`${import.meta.env.BASE_URL}/brands/grandstream.png`} alt="Logo grandstream" />
+            <img src={`${import.meta.env.BASE_URL}/brands/hinksemi.png`} alt="Logo hinksemi" />
+            <img src={`${import.meta.env.BASE_URL}/brands/linkedpro.png`} alt="Logo linkedpro" />
+            <img src={`${import.meta.env.BASE_URL}/brands/mikrotik.png`} alt="Logo mikrotik" />
+            <img src={`${import.meta.env.BASE_URL}/brands/panduit.png`} alt="Logo panduit" />
+            <img src={`${import.meta.env.BASE_URL}/brands/tp-link.png`} alt="Logo tp-link" />
+            <img src={`${import.meta.env.BASE_URL}/brands/ubiquiti.png`} alt="Logo ubiquiti" />
         </Logos_slider>
     </CarruselBrandsContainer>
   );

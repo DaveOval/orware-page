@@ -224,7 +224,7 @@ export const Home = () => {
           </HeroTexto>
           <HeroImagen>
             <picture>
-              <img src="./engineers.png" alt="Ingenieria en OrWare" />
+              <img src={`${import.meta.env.BASE_URL}/engineers.png`} alt="Ingenieria en OrWare" />
             </picture>
           </HeroImagen>
         </HeroContainer>
@@ -247,14 +247,14 @@ export const Home = () => {
             </WhyUsCard>
             <WhyUsCard data-aos="fade-up">
               <WhyUsCardImg>
-                <img src="./share.svg" />
+                <img src={`${import.meta.env.BASE_URL}/share.svg`} />
               </WhyUsCardImg>
               <WhyUsCardText>Genera Soluciones</WhyUsCardText>
               <p>Explora cómo creamos propuestas únicas y adaptadas a tus necesidades tecnológicas.</p>
             </WhyUsCard>
             <WhyUsCard data-aos="fade-up">
               <WhyUsCardImg>
-                <img src="./perfect.svg" />
+                <img src={`${import.meta.env.BASE_URL}/perfect.svg`} />
               </WhyUsCardImg>
               <WhyUsCardText> Perfecciona Tu Proyecto</WhyUsCardText>
               <p>Ajusta y refina la solución elegida con nuestras herramientas y servicios personalizados para alcanzar la perfección.</p>

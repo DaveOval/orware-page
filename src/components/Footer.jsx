@@ -73,7 +73,7 @@ export const Footer = () => {
     <FooterContainer>
         <FooterHeader>
             <picture>
-                <img src="./logoorware.png" alt="logo orware" />
+                <img src={`${import.meta.env.BASE_URL}/logoorware.png`} alt="logo orware" />
             </picture>
             <ul>
                 <li>

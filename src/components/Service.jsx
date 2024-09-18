@@ -106,7 +106,7 @@ export const Service = ({ title, subtitle, link, image, orientation }) => {
         </ServiceTexto>
         <ServiceImagen>
             <picture>
-                <img src={image} alt={title} loading="lazy" />
+                <img src={`${import.meta.env.BASE_URL}${image}`} alt={title} loading="lazy" />
             </picture>
         </ServiceImagen>
     </ServiceContainer>
