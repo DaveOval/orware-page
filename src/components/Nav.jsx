@@ -1,7 +1,35 @@
 import styled from "@emotion/styled";
+import { keyframes } from "@emotion/react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { uicolors } from "../ui/color";
+
+// Animaciones definidas usando keyframes
+const slideIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+    scale: 0.8;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    scale: 1;
+  }
+`;
+
+const slideOut = keyframes`
+  from {
+    opacity: 1;
+    transform: translateX(0);
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+    scale: 0.8;
+  }
+`;
 
 const NavContainer = styled.nav`
   display: flex;
@@ -20,7 +48,7 @@ const NavContainer = styled.nav`
 
 const ImageContainer = styled.div`
   background-color: ${uicolors.background};
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 10px;
   border-radius: 8px;
   img {
@@ -56,15 +84,36 @@ const LinkContainer = styled.div`
     color: white;
     font-size: 20px;
   }
+
+  animation: ${({ isOpen }) => (isOpen ? slideIn : slideOut)} 0.4s ease-in-out;
 `;
 
 export const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Cierra el menú si se hace clic fuera de él
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
     <NavContainer>
@@ -83,7 +132,7 @@ export const Nav = () => {
       </Hamburger>
 
       {isOpen && (
-        <LinkContainer >
+        <LinkContainer ref={menuRef} isOpen={isOpen}>
           <Link to="/">Inicio</Link>
           <Link to="/sobre-nosotros">Sobre nosotros</Link>
           <Link to="/servicios">Servicios</Link>
