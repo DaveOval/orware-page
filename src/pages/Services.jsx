@@ -1,49 +1,59 @@
-import React from 'react'
+import styled from "@emotion/styled";
+import { uicolors } from "../ui/color";
+import { ServiceCard } from "../components/";
+import aos from "aos";
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+import { services } from "../data/services";
+
+const ServicesContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    padding-top: 100px;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 100vh;
+    h1 {
+        font-size: 50px;
+        color: white;
+        font-weight: 500;
+        span {
+            color: ${uicolors.primary};
+            font-size: 50px;
+        }
+    }
+    p {
+        color: white;
+        font-size: 20px;
+        margin: 20px 0;
+    }
+    span {
+        color: ${uicolors.primary};
+        font-size: 20px;
+    }
+`
+const ServicesGrid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+`
 
 export const Services = () => {
     return (
-        <main>
-            <header className="servicio-header">
-            <h1>Servicios de Mantenimiento de PC</h1>
-            <p>Brindamos un servicio completo de mantenimiento de PC, que incluye limpieza de hardware, optimización de software y actualización de equipos para garantizar el mejor rendimiento de tus computadoras.</p>
-            </header>
+        <ServicesContainer>
+            <h1 data-aos="fade-up">Nuestros <span>Servicios</span></h1>
+            <p data-aos="fade-up">En Orware, ofrecemos una gama de servicios diseñados para ayudarte a alcanzar tus objetivos tecnológicos. Desde el diseño web innovador hasta soluciones personalizadas para tus necesidades específicas, nuestro equipo está comprometido a brindarte excelencia y creatividad en cada proyecto.</p>
+            <ServicesGrid>
+                {services.map((service, index) => (
+                    <ServiceCard key={index} title={service.title} description={service.subtitle} link={service.link} image={service.image} orientation={service.orientation} />
+                ))}
+            </ServicesGrid>
 
-            <section className="beneficios">
-            <h2>Beneficios</h2>
-            <ul>
-                <li>Alarga la vida útil de tus equipos</li>
-                <li>Mejora la velocidad y rendimiento</li>
-                <li>Previene fallos futuros</li>
-            </ul>
-            </section>
-
-            <section className="proceso">
-            <h2>Proceso de Trabajo</h2>
-            <ol>
-                <li><strong>Inspección:</strong> Revisamos el estado actual del equipo.</li>
-                <li><strong>Diagnóstico:</strong> Identificamos posibles problemas y áreas de mejora.</li>
-                <li><strong>Limpieza:</strong> Limpieza completa del hardware y disipadores.</li>
-                <li><strong>Optimización:</strong> Mejora del software y actualización de controladores.</li>
-                <li><strong>Pruebas Finales:</strong> Verificación del funcionamiento óptimo del equipo.</li>
-            </ol>
-            </section>
-
-            <section className="cta">
-            <h2>¿Necesitas Mantenimiento para tus PCs?</h2>
-            <a href="#contacto" className="btn-primary">Solicita tu mantenimiento ahora</a>
-            </section>
-
-            <section className="faqs">
-            <h2>Preguntas Frecuentes</h2>
-            <div className="faq-item">
-                <h3>¿Con qué frecuencia debo realizar mantenimiento a mis PCs?</h3>
-                <p>Se recomienda realizarlo cada 6 meses para asegurar un rendimiento óptimo.</p>
-            </div>
-            <div className="faq-item">
-                <h3>¿Qué incluye el mantenimiento de PC?</h3>
-                <p>Incluye limpieza interna, optimización de software, y actualización de componentes básicos.</p>
-            </div>
-            </section>
-        </main>
+        </ServicesContainer>
     );
 }
