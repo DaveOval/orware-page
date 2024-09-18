@@ -1,35 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
-    --sb-track-color: #1E1F21;
-    --sb-thumb-color: #8b8b8b;
-    --sb-size: 14px;
-  }
+  --sb-track-color: #1E1F21;
+  --sb-thumb-color: #8b8b8b;
+  --sb-size: 14px;
+}
   
-  body::-webkit-scrollbar {
-    width: var(--sb-size);
-  }
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
   
-  body::-webkit-scrollbar-track {
-    background: var(--sb-track-color);
-  }
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+}
   
-  body::-webkit-scrollbar-thumb {
-    background: var(--sb-thumb-color);
-    border-radius: 3px;
-  }
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
   
-  @supports not selector(::-webkit-scrollbar) {
-    body {
-        scrollbar-color: var(--sb-thumb-color)
-                       var(--sb-track-color);
-    }
+@supports not selector(::-webkit-scrollbar) {
+  body {
+      scrollbar-color: var(--sb-thumb-color)
+                      var(--sb-track-color);
   }
+}
 body {
     font-family: 'Outfit', sans-serif;
     /* background-image: url("/background.png"); */
