@@ -133,10 +133,10 @@ export const Nav = () => {
 
       {isOpen && (
         <LinkContainer ref={menuRef} isOpen={isOpen}>
-          <Link to="/">Inicio</Link>
-          <Link to="/sobre-nosotros">Sobre nosotros</Link>
-          <Link to="/servicios">Servicios</Link>
-          <Link to="/contacto">Contacto</Link>
+          <Link  onClick={toggleMenu} to="/">Inicio</Link>
+          <Link  onClick={toggleMenu} to="/sobre-nosotros">Sobre nosotros</Link>
+          <Link  onClick={toggleMenu} to="/servicios">Servicios</Link>
+          <Link  onClick={toggleMenu} to="/contacto">Contacto</Link>
         </LinkContainer>
       )}
     </NavContainer>
