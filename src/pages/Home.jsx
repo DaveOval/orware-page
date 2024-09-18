@@ -240,7 +240,7 @@ export const Home = () => {
           <WhyUsCards>
             <WhyUsCard data-aos="fade-up">
               <WhyUsCardImg>
-                <img src="./solution.svg" />
+                <img src={`${import.meta.env.BASE_URL}solution.svg`} alt="Solution"  />
               </WhyUsCardImg>
               <WhyUsCardText>Comparte Tu Proyecto</WhyUsCardText>
               <p>Proporciona los detalles de tu proyecto para que podamos comprender tus requerimientos y objetivos específicos.</p>
