@@ -42,6 +42,9 @@ const CarruselBrandsContainer = styled.div`
         content: "";
         z-index: 2;
     }
+    @media (max-width: 768px) {
+        border-radius: 0;
+    }
 `;
 
 const Logos_slider = styled.div`
